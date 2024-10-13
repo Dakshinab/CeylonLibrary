@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Home | Login & Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 0, 0, 0.8); 
+            color: white;
+            padding: 20px 30px; 
+            border-radius: 8px;
+            font-size: 18px; 
+            display: none; 
+            text-align: center; 
+            z-index: 1000; 
+        }
+
+        .notification.success {
+            background: rgba(255, 255, 255, 0.35); 
+        }
+    </style>
+</head>
+<body>
+    <div class="notification" id="notification"></div>
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CeylonLibrary</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="home.html" class="link active">Home</a></li>
+                    <li><a href="category.html" class="link">Category</a></li>
+                    <li><a href="services.html" class="link">Services</a></li>
+                    <li><a href="about.html" class="link">About Us</a></li>
+                    <li><a href="customers.php" class="link">Customers</a></li>
+                    <li><a href="admin.html" class="link">Admin</a></li>
+                </ul>
+            </div>
+            <div class="nav-button">
+                <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+                <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+            </div>
+            <div>
+                <div class="nav-menu-btn">
+                    <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+                </div>
+            </div>
+        </nav>
+
+        <!------------------------------- Form box--------------------------------->
+        <div class="form-box">
+            <!---------------------------login form------------------------------> 
+            <div class="login-container" id="login">
+                <div class="top">
+                    <span>Don't have an account? <a href="#" onclick="register()">Sign Up</a></span>
+                    <header>Login</header>
+                </div>
+                <form action="login.php" method="post">
+                    <div class="input-box">
+                        <input type="text" class="input-field" name="username" placeholder="ID or Email" required>
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Password" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Login">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="login-check">
+                            <label for="login-check">Remember me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Forgot Password?</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!---------------------------registration form------------------------------> 
+            <div class="register-container" id="register">
+                <div class="top">
+                    <span>Have an account? <a href="#" onclick="login()">Login</a></span>
+                    <header>Sign Up</header>
+                </div>
+                <form action="register.php" method="post">
+                    <div class="two-forms">
+                        <div class="input-box">
+                            <input type="text" class="input-field" name="first_name" placeholder="First Name" required>
+                            <i class="bx bx-user"></i>
+                        </div>
+                        <div class="input-box">
+                            <input type="text" class="input-field" name="last_name" placeholder="Last Name" required>
+                            <i class="bx bx-user"></i>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" class="input-field" name="email" placeholder="Email" required>
+                        <i class="bx bx-envelope"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" name="password" placeholder="Password" required>
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Register">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="register-check">
+                            <label for="register-check">Remember me</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="#">Terms & Conditions</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function myMenuFunction(){
+            var i = document.getElementById("navMenu");
+            if(i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+
+        function login(){
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var a = document.getElementById("loginBtn");
+            var b = document.getElementById("registerBtn");
+
+            x.style.left ="4px";
+            y.style.right ="-520px";
+            a.className += " white-btn";
+            b.className = "btn";
+            x.style.opacity =1;
+            y.style.opacity =0;
+        }
+
+        function register(){
+            var x = document.getElementById("login");
+            var y = document.getElementById("register");
+            var a = document.getElementById("loginBtn");
+            var b = document.getElementById("registerBtn");
+
+            x.style.left = "-510px";
+            y.style.right = "5px";
+            a.className = "btn";
+            b.className += " white-btn";
+            x.style.opacity =0;
+            y.style.opacity =1;
+        }
+
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const notification = document.getElementById('notification');
+            
+            if (urlParams.get('status') === 'success') {
+                notification.textContent = 'Registered Successfully';
+                notification.classList.add('success');
+                notification.style.display = 'block';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 5000); 
+            } else if (urlParams.get('status') === 'failed') {
+                notification.textContent = 'Login Failed';
+                notification.classList.remove('success');
+                notification.style.display = 'block';
+                setTimeout(() => {
+                    notification.style.display = 'none';
+                }, 5000); 
+            }
+        };
+    </script>
+</body>
+</html>

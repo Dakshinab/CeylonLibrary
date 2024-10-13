@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Admin | CeylonLibrary</title>
+</head>
+<body>
+    <div class="notification" id="notification"></div>
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CeylonLibrary Admin</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="home.html" class="link">Home</a></li>
+                    <li><a href="category.html" class="link">Category</a></li>
+                    <li><a href="services.html" class="link">Services</a></li>
+                    <li><a href="about.html" class="link">About Us</a></li>
+                    <li><a href="customers.php" class="link">Customers</a></li>
+                    <li><a href="admin.html" class="link active">Admin</a></li>
+                </ul>
+            </div>
+            <div class="nav-menu-btn">
+                <i class="bx bx-menu" onclick="myMenuFunction()"></i>
+            </div>
+        </nav>
+
+        <!-- Admin content -->
+        <div class="form-box">
+            <div class="admin-dashboard">
+                <header>Welcome to the Admin Dashboard</header>
+                <div class="admin-options">
+                    <div class="admin-option">
+                        <a href="admin-register.html">Settings</a>
+                    </div>
+                    <div class="admin-option">
+                        <a href="admin-login.html">Admin Only Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function myMenuFunction() {
+            var i = document.getElementById("navMenu");
+            if(i.className === "nav-menu") {
+                i.className += " responsive";
+            } else {
+                i.className = "nav-menu";
+            }
+        }
+    </script>
+</body>
+</html>

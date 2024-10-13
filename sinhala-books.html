@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Sinhala Books | CeylonLibrary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .book-list {
+            background-color: rgba(255, 255, 255, 0.5); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0; 
+        }
+
+        .add-book {
+            background-color: rgba(255, 255, 255, 0.5); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-left: 20px; 
+            margin-top: 20px; 
+        }
+
+        h2 {
+            color: white; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            color: white; 
+        }
+
+        th {
+            background-color: rgba(0, 0, 0, 0.6); 
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1); 
+        }
+
+        button {
+            background-color: rgba(0, 0, 0, 0.6); 
+            color: white; 
+            border: none;
+            padding: 8px 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.775); 
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 5px;
+            margin-right: 10px;
+            color: black;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CeylonLibrary</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="home.html" class="link">Home</a></li>
+                    <li><a href="category.html" class="link">Category</a></li>
+                    <li><a href="services.html" class="link">Services</a></li>
+                    <li><a href="about.html" class="link">About Us</a></li>
+                    <li><a href="customers.html" class="link">Customers</a></li>
+                    <li><a href="admin.html" class="link">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Book List Table -->
+        <div class="book-list">
+            <h2>Available Books</h2>
+            <table id="bookTable">
+                <thead>
+                    <tr>
+                        <th>Book ID</th>
+                        <th>Book Name</th>
+                        <th>Author</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add Book Form -->
+        <div class="add-book">
+            <h2>Add New Book</h2>
+            <form id="addBookForm">
+                <input type="text" class="input-field" id="book_name" placeholder="Book Name" required>
+                <input type="text" class="input-field" id="author" placeholder="Author Name" required>
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('addBookForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const bookName = document.getElementById('book_name').value;
+            const author = document.getElementById('author').value;
+
+            fetch('addBook.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ book_name: bookName, author: author })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                loadBooks(); 
+            })
+            .catch(error => console.error('Error:', error));
+        });
+
+        function loadBooks() {
+            fetch('getBooks.php')
+            .then(response => response.json())
+            .then(data => {
+                const bookTableBody = document.querySelector('#bookTable tbody');
+                bookTableBody.innerHTML = ''; 
+                data.forEach(book => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${book.book_id}</td>
+                        <td class="editable">${book.book_name}</td>
+                        <td class="editable">${book.author}</td>
+                        <td>
+                            <button onclick="editBook(this)">Edit</button>
+                            <button onclick="deleteBook(${book.book_id})">Delete</button>
+                        </td>
+                    `;
+                    bookTableBody.appendChild(row);
+                });
+            });
+        }
+
+        function editBook(button) {
+            const row = button.closest('tr');
+            const bookNameCell = row.querySelectorAll('.editable')[0];
+            const authorCell = row.querySelectorAll('.editable')[1];
+
+            if (button.textContent === 'Edit') {
+            
+                const bookName = bookNameCell.textContent;
+                const author = authorCell.textContent;
+
+                bookNameCell.innerHTML = `<input type="text" value="${bookName}" />`;
+                authorCell.innerHTML = `<input type="text" value="${author}" />`;
+
+                button.textContent = 'Save'; 
+            } else {
+                
+                const newBookName = bookNameCell.querySelector('input').value;
+                const newAuthor = authorCell.querySelector('input').value;
+
+                bookNameCell.textContent = newBookName;
+                authorCell.textContent = newAuthor;
+
+            
+                const bookId = row.querySelector('td').textContent; 
+                fetch('updateBook.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ book_id: bookId, book_name: newBookName, author: newAuthor })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                })
+                .catch(error => console.error('Error:', error));
+
+                button.textContent = 'Edit'; 
+            }
+        }
+
+        function deleteBook(bookId) {
+            if (confirm('Are you sure you want to delete this book?')) {
+                fetch('deleteBook.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ book_id: bookId })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.message);
+                    loadBooks(); 
+                })
+                .catch(error => console.error('Error:', error));
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBooks);
+    </script>
+</body>
+</html>

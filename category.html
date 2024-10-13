@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Category | CeylonLibrary</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .category-section {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.2); 
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+
+        .category-button {
+            display: block;
+            text-align: center;
+            background-color: transparent;
+            border: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin: 0 20px; 
+            text-decoration: none; 
+        }
+
+        .category-button img {
+            width: 220px; 
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-button:hover img {
+            transform: scale(1.08);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-label {
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff; 
+            text-decoration: none; 
+            position: relative;
+        }
+
+        .category-button:hover .category-label {
+            color: #fff; 
+        }
+
+        .category-label::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: #fff; 
+            left: 0;
+            bottom: -5px;
+            transition: width 0.3s ease;
+        }
+
+        .category-button:hover .category-label::after {
+            width: 100%; 
+        }
+    </style>
+</head>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>CeylonLibrary</p>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="home.html" class="link">Home</a></li>
+                <li><a href="category.html" class="link active">Category</a></li>
+                <li><a href="services.html" class="link">Services</a></li>
+                <li><a href="about.html" class="link">About Us</a></li>
+                <li><a href="customers.php" class="link"> Customers</a></li>
+                <li><a href="admin.html" class="link">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="category-section">
+        <!-- Category 1: Sinhala Books -->
+        <a href="sinhala-books.html" class="category-button">
+            <img src="6.jpeg" alt="Sinhala Books">
+            <div class="category-label">Sinhala Books</div>
+        </a>
+
+        <!-- Category 2: English Books -->
+        <a href="english-books-page.html" class="category-button"> 
+            <img src="5.jpg" alt="English Books">
+            <div class="category-label">English Books</div>
+        </a>
+
+        <!-- Category 3: Children's Books -->
+        <a href="children-books-page.html" class="category-button"> 
+            <img src="7.jpeg" alt="Children's Books">
+            <div class="category-label">Children's Books</div>
+        </a>
+
+        <!-- Category 4: Tamil Books -->
+        <a href="tamil-books.html" class="category-button">
+            <img src="8.jpeg" alt="Tamil Books">
+            <div class="category-label">Tamil Books</div>
+        </a>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

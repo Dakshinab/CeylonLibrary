@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>English Books | CeylonLibrary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        .nav-logo p {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-menu a.active {
+            color: #ff6347; 
+        }
+
+        .book-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .book-section img {
+            width: 300px;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-section img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        .book-info {
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            border-radius: 15px;
+            color: #333;
+        }
+
+        .book-info h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+
+        .book-info p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CeylonLibrary</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="home.html" class="link">Home</a></li>
+                    <li><a href="category.html" class="link">Category</a></li>
+                    <li><a href="services.html" class="link">Services</a></li>
+                    <li><a href="about.html" class="link">About Us</a></li>
+                    <li><a href="customers.php" class="link"> Customers</a></li>
+                    <li><a href="admin.html" class="link">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content-section">
+            <h1>English Books</h1>
+
+            <div class="book-section">
+
+                <a href="pilgrims-progress.html">
+                    <img src="pp.jpeg" alt="Pilgrim's Progress by John Bunyan">
+                </a>
+
+                <div class="book-info">
+                    <h2>Pilgrim's Progress by John Bunyan</h2>
+                    <p>
+                        This Christian allegory follows a man named Christian on his journey from his hometown, the "City of Destruction," to the "Celestial City" on Mount Zion. 
+                        Christian faces numerous obstacles and temptations along the way, including the Slough of Despond, Vanity Fair, and the Valley of the Shadow of Death. 
+                        The narrative serves as a metaphor for the believer's journey from sin and despair to salvation and eternal life.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="robinson-crusoe.html">
+                    <img src="rc.jpeg" alt="Robinson Crusoe by Daniel Defoe">
+                </a>
+
+                <div class="book-info">
+                    <h2>Robinson Crusoe by Daniel Defoe</h2>
+                    <p>
+                        The book is a classic adventure novel about a man who spends 28 years on a remote tropical island near Trinidad, encountering cannibals, captives, 
+                        and mutineers before being rescued. The story is noted for its realistic portrayal of the protagonist's physical and psychological development and 
+                        for its detailed depiction of his attempts to create a life for himself in the wilderness. The novel has been interpreted as an allegory for the 
+                        development of civilization, as well as a critique of European colonialism.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="gullivers-travels.html">
+                    <img src="gt.jpeg" alt="Gulliver's Travels by Jonathan Swift">
+                </a>
+
+                <div class="book-info">
+                    <h2>Gulliver's Travels by Jonathan Swift</h2>
+                    <p>
+                        This classic satire follows the travels of a surgeon and sea captain who embarks on a series of extraordinary voyages. The protagonist first finds 
+                        himself shipwrecked on an island inhabited by tiny people, later discovers a land of giants, then encounters a society of intelligent horses, and 
+                        finally lands on a floating island of scientists. Through these bizarre adventures, the novel explores themes of human nature, morality, and society, 
+                        offering a scathing critique of European culture and the human condition.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="tom-jones.html">
+                    <img src="tj.jpeg" alt="Tom Jones by Henry Fielding">
+                </a>
+
+                <div class="book-info">
+                    <h2>Tom Jones by Henry Fielding</h2>
+                    <p>
+                        This classic novel tells the story of Tom Jones, a charming and good-hearted but impulsive young man, who is expelled from his adoptive family home 
+                        due to his wild behavior and love for the beautiful Sophia Western. His journey through 18th-century England is filled with adventures, misadventures, 
+                        and a colorful cast of characters, as he struggles with his identity and seeks redemption. The narrative explores themes of class, virtue, and morality, 
+                        and is known for its humor, social satire, and vivid characterization.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="jane-eyre.html">
+                    <img src="je.jpeg" alt="Jane Eyre by Charlotte Brontë">
+                </a>
+
+                <div class="book-info">
+                    <h2>Jane Eyre by Charlotte Brontë</h2>
+                    <p>
+                        The novel follows the life of Jane Eyre, an orphan who is mistreated by her relatives and sent to a charity school. As she grows up, Jane becomes 
+                        a governess at Thornfield Hall, where she falls in love with the brooding and mysterious Mr. Rochester. However, she soon learns of a dark secret 
+                        in his past that threatens their future together. The story is a profound exploration of a woman's self-discovery and her struggle for independence 
+                        and love in a rigid Victorian society.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="moonstone.html">
+                    <img src="ms.jpeg" alt="The Moonstone by Wilkie Collins">
+                </a>
+
+                <div class="book-info">
+                    <h2>The Moonstone by Wilkie Collins</h2>
+                    <p>
+                        "The Moonstone" is a detective novel that revolves around a large, valuable yellow diamond that was stolen from an Indian temple and is now in England. 
+                        The diamond is bequeathed to a young woman on her eighteenth birthday, but is stolen that same night. The novel follows the investigation of the theft, 
+                        which is complicated by a series of confusing events and false leads. The resolution involves the unraveling of a tangled web of deception, crime, 
+                        and colonial guilt.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="three-men-in-a-boat.html">
+                    <img src="tmb.jpeg" alt="Three Men in a Boat by Jerome K. Jerome">
+                </a>
+
+                <div class="book-info">
+                    <h2>Three Men in a Boat by Jerome K. Jerome</h2>
+                    <p>
+                        "Three Men in a Boat" is a comedic account of a two-week boating holiday on the Thames River from Kingston upon Thames to Oxford and back to Kingston. 
+                        The story follows three friends and a dog who decide to take a trip to cure their hypochondriac symptoms. The journey is filled with humorous incidents, 
+                        historical digressions, and comical misunderstandings. Despite their initial intentions, the trio's holiday turns into a series of misadventures, 
+                        providing a light-hearted commentary on the English upper-middle class at the end of the 19th century.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="red-badge-of-courage.html">
+                    <img src="rbc.jpeg" alt="The Red Badge of Courage by Stephen Crane">
+                </a>
+
+                <div class="book-info">
+                    <h2>The Red Badge of Courage by Stephen Crane</h2>
+                    <p>
+                        "The Red Badge of Courage" is a novel set during the American Civil War, focusing on a young private in the Union Army who flees from the field of battle. 
+                        Overcome with shame, he longs for a wound, a "red badge of courage," to counteract his cowardice. When his regiment once again faces the enemy, he acts 
+                        as the standard-bearer, proving his courage. The book explores the themes of heroism, manhood, and the illusion versus reality of war.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="vanity-fair.html">
+                    <img src="vf.jpeg" alt="Vanity Fair by William Makepeace Thackeray">
+                </a>
+
+                <div class="book-info">
+                    <h2>Vanity Fair by William Makepeace Thackeray</h2>
+                    <p>
+                        This classic novel follows the lives of two contrasting women, the cunning and ruthless Becky Sharp and the sweet and naive Amelia Sedley, against 
+                        the backdrop of English society during the Napoleonic Wars. The book is a satirical exploration of the obsession with wealth, status, and social climbing, 
+                        and the moral bankruptcy that can result from such pursuits. The narrative weaves an intricate tale of love, betrayal, and redemption, exposing the vanity 
+                        and hypocrisy of high society.
+                    </p>
+                </div>
+            </div>
+
+            <div class="book-section">
+                <a href="jude-obscure.html">
+                    <img src="jo.jpeg" alt="Jude the Obscure by Thomas Hardy">
+                </a>
+
+                <div class="book-info">
+                    <h2>Jude the Obscure by Thomas Hardy</h2>
+                    <p>
+                        This novel tells the story of Jude Fawley, a working-class young man who dreams of becoming a scholar. The traditional class structure in 19th-century 
+                        England prevents him from realizing his dream and his only solace is his love for his cousin, Sue Bridehead. Their scandalous relationship and the tragic 
+                        events that follow form the heart of the narrative, which explores themes of love, class, religion, and morality.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

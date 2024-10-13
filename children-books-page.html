@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Children's Books | CeylonLibrary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .content-section {
+            max-width: 1200px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            color: #fff;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 15px;
+        }
+
+        .nav-logo p {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-menu a.active {
+            color: #ff6347; 
+        }
+
+        .book-section {
+            display: flex;
+            margin-bottom: 40px;
+        }
+
+        .book-section img {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .book-section img:hover {
+            transform: scale(1.05);
+        }
+
+        .book-description {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            flex-grow: 1;
+        }
+
+        .book-description h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .book-description p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>CeylonLibrary</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul>
+                    <li><a href="home.html" class="link">Home</a></li>
+                    <li><a href="category.html" class="link">Category</a></li>
+                    <li><a href="services.html" class="link">Services</a></li>
+                    <li><a href="about.html" class="link">About Us</a></li>
+                    <li><a href="customers.php" class="link">Customers</a></li>
+                    <li><a href="admin.html" class="link">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content-section">
+            <h1>Children's Books</h1>
+
+            <!-- Book 1 -->
+            <div class="book-section">
+                <img src="wwt.jpeg" alt="Where the Wild Things Are">
+                <div class="book-description">
+                    <h2>Where the Wild Things Are by Maurice Sendak</h2>
+                    <p>A young boy named Max, dressed in his wolf costume, wreaks such havoc through his household that he is sent to bed without his supper. In his room, a mysterious, wild forest and sea grows out of his imagination, and Max sails to the land of the Wild Things. The Wild Things are fearsome-looking monsters, but Max conquers them by “staring into their yellow eyes without blinking once”, and he is made the king of all wild things. However, he soon finds himself lonely and homesick and returns home to his bedroom where he finds his supper waiting for him, still hot.</p>
+                </div>
+            </div>
+
+            <!-- Book 2 -->
+            <div class="book-section">
+                <img src="ala.jpeg" alt="Alice's Adventures in Wonderland">
+                <div class="book-description">
+                    <h2>Alice's Adventures in Wonderland by Lewis Carroll</h2>
+                    <p>This novel follows the story of a young girl named Alice who falls down a rabbit hole into a fantastical world full of peculiar creatures and bizarre experiences. As she navigates through this strange land, she encounters a series of nonsensical events, including a tea party with a Mad Hatter, a pool of tears, and a trial over stolen tarts. The book is renowned for its playful use of language, logic, and exploration of the boundaries of reality.</p>
+                </div>
+            </div>
+
+            <!-- Book 3 -->
+            <div class="book-section">
+                <img src="ppl.jpeg" alt="Pippi Longstocking">
+                <div class="book-description">
+                    <h2>Pippi Longstocking by Astrid Lindgren</h2>
+                    <p>The book tells the story of Pippi Longstocking, a young girl with superhuman strength who lives alone in a colorful house in a small Swedish village. With her pet monkey and horse, Pippi embarks on a series of humorous and often absurd adventures, defying societal norms and adult authority with her unconventional wisdom and moral code. Despite her wild antics, Pippi's kindness, generosity, and courage make her a beloved figure in her community.</p>
+                </div>
+            </div>
+
+            <!-- Book 4 -->
+            <div class="book-section">
+                <img src="tlp.jpeg" alt="The Little Prince">
+                <div class="book-description">
+                    <h2>The Little Prince by Antoine de Saint-Exupéry</h2>
+                    <p>A young prince from a tiny asteroid embarks on a journey across the universe, visiting various planets and meeting their strange inhabitants. Along the way, he learns about the follies and absurdities of the adult world, the nature of friendship, and the importance of retaining a childlike wonder and curiosity. His journey eventually leads him to Earth, where he befriends a fox and learns about love and loss before finally returning to his asteroid.</p>
+                </div>
+            </div>
+
+            <!-- Book 5 -->
+            <div class="book-section">
+                <img src="hob.jpeg" alt="The Hobbit">
+                <div class="book-description">
+                    <h2>The Hobbit by J. R. R. Tolkien</h2>
+                    <p>In this fantasy novel, a timid and unadventurous hobbit named Bilbo Baggins is whisked away on a grand adventure by a wizard and a group of dwarves. Their mission is to reclaim the dwarves' homeland and treasure from a fearsome dragon. Throughout the journey, Bilbo grows in courage and cunning, proving himself a true hero as he encounters trolls, goblins, giant spiders, and other perils. The novel culminates with a great battle involving various races of Middle Earth, after which Bilbo returns home, forever changed by his experiences.</p>
+                </div>
+            </div>
+
+            <!-- Book 6 -->
+            <div class="book-section">
+                <img src="hdm.jpeg" alt="His Dark Materials">
+                <div class="book-description">
+                    <h2>His Dark Materials by Philip Pullman</h2>
+                    <p>"His Dark Materials" is a fantasy trilogy that follows the journey of a young girl named Lyra Belacqua and her daemon, Pantalaimon, across parallel universes. Throughout their adventures, they encounter a variety of mythical creatures, confront religious and political systems, and grapple with complex themes such as free will, original sin, and the nature of consciousness. The series also delves into the mysteries of Dust, a strange particle integral to the multiverse's function.</p>
+                </div>
+            </div>
+
+            <!-- Book 7 -->
+            <div class="book-section">
+                <img src="tcn.jpeg" alt="The Chronicles of Narnia">
+                <div class="book-description">
+                    <h2>The Chronicles of Narnia by C. S. Lewis</h2>
+                    <p>This seven-part series follows the adventures of various children who play central roles in the unfolding history of the fantastical realm of Narnia. The children are magically transported to Narnia from our world, where they aid the noble lion Aslan in his struggles against evil forces in order to restore peace and justice. The series explores themes of good versus evil, the nature of faith, and the power of sacrifice, all set against a richly imagined magical world full of diverse creatures and landscapes.</p>
+                </div>
+            </div>
+
+            <!-- Book 8 -->
+            <div class="book-section">
+                <img src="wtp.jpeg" alt="Winnie the Pooh">
+                <div class="book-description">
+                    <h2>Winnie the Pooh by A. A. Milne</h2>
+                    <p>This classic children's tale follows the charming adventures of a lovable, honey-loving bear named Winnie the Pooh and his friends in the Hundred Acre Wood. With his companions, including the timid Piglet, the gloomy Eeyore, the energetic Tigger, and the wise Owl, Pooh navigates through various situations and dilemmas, often with humorous and heartwarming results. The book is a celebration of friendship, imagination, and the simple joys of life.</p>
+                </div>
+            </div>
+
+            <!-- Book 9 -->
+            <div class="book-section">
+                <img src="chw.jpeg" alt="Charlotte's Web">
+                <div class="book-description">
+                    <h2>Charlotte's Web by E. B. White</h2>
+                    <p>A young girl named Fern saves a runt piglet from being slaughtered and names him Wilbur. When Wilbur grows too large, he is sent to live in her uncle's barn, where he befriends a clever spider named Charlotte. When Wilbur's life is in danger again, Charlotte weaves messages into her web to convince the farmer that Wilbur is too special to kill. The book explores themes of friendship, sacrifice, and the cycle of life.</p>
+                </div>
+            </div>
+
+            <!-- Book 10 -->
+            <div class="book-section">
+                <img src="rdm.jpeg" alt="Matilda">
+                <div class="book-description">
+                    <h2>Matilda by Roald Dahl</h2>
+                    <p>The book follows the story of Matilda, an exceptionally intelligent young girl who is neglected and mistreated by her parents. She finds solace and companionship in the local library, where she develops a love of books and a remarkable talent for telekinesis. Matilda eventually uses these abilities to defend her friends from their tyrannical headmistress, Miss Trunchbull, and help her kind-hearted teacher, Miss Honey, reclaim her life.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
